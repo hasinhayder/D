@@ -31,4 +31,15 @@ class D {
     static function dumpJSON() {
         echo json_encode( static::$_bucket );
     }
+    
+    static function dumpInConsole() {
+        $varName = "dump".md5(time());
+        $dump = base64_encode(json_encode(static::$_bucket));
+        ?>
+        <script>
+            let <?php echo $varName ;?> = "<?php echo $dump ;?>";
+            console.log(atob(<?php echo $varName ;?>));
+        </script>
+        <?php
+    }
 }
