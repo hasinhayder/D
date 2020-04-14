@@ -1,0 +1,19 @@
+{
+    "name": "hasinhayder/d",
+    "description": "A utility package to help PHP developers debug their script by providing utility methods to collect data and display them all at once",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hasin Hayder",
+            "email": "countdraculla@gmail.com",
+            "homepage":"https://hasin.me"
+        }
+    ],
+    "autoload":{
+        "psr-4":{
+            "HasinHayder\\D\\":"src/"
+        }
+    },
+    "require": {}
+}
