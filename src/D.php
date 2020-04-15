@@ -35,12 +35,12 @@ class D {
     static function dumpInConsole() {
         $varName1 = "txtarea".md5(time());
         $varName2 = "dump".md5(time());
-        $dump = htmlspecialchars(json_encode(static::$_bucket));
+        $dump = base64_encode(print_r(static::$_bucket,true));
         ?>
         <script>
             let <?php echo $varName1 ;?> = document.createElement('textarea');
             let <?php echo $varName2 ;?> = "<?php echo $dump ;?>";
-            <?php echo $varName1 ;?>.innerHTML = <?php echo $varName2 ;?>;
+            <?php echo $varName1 ;?>.innerHTML = atob(<?php echo $varName2 ;?>);
             console.log(<?php echo $varName1 ;?>.value);
         </script>
         <?php
